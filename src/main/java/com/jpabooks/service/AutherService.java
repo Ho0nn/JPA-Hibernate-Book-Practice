@@ -19,6 +19,9 @@ public class AutherService {
         return authRepo.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Author not found with ID: " + id));
     }
+    public Auther getById(Long id) {
+        return authRepo.getById(id);
+    }
 
     public List<Auther> findAll() {
         return authRepo.findAll();
