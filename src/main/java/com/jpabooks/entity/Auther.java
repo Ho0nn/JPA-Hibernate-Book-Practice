@@ -1,14 +1,26 @@
 package com.jpabooks.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "authors")
-public class Auther { // Consider renaming to "Author"
+public class Auther {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy ="auther" )
+    private List<Book> books=new ArrayList<>(); ;
+
+    public void addBook(Book book) {
+        books.add(book);
+    }
 
     public Long getId() {
         return id;

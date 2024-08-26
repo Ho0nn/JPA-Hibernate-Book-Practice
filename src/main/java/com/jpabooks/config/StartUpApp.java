@@ -41,7 +41,7 @@ public class StartUpApp implements CommandLineRunner {
         Book book3 = new Book();
         book3.setName("Java");
         book3.setPrice(100);
-        book3.setAuther(auther3);
+        book3.setAuther(auther2);
 
         bookService.insertAll(Arrays.asList(book1, book2, book3));
     }

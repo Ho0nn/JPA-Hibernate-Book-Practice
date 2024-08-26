@@ -1,20 +1,12 @@
 package com.jpabooks.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.*;
-@NamedEntityGraph(name="loadAuther",attributeNodes = @NamedAttributeNode("auther"))
-@Entity
-@Table(name = "books")
-public class Book {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class BookDTO {
     private Long id;
     private String name;
     private double price;
-    @JsonManagedReference
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "author_id")
-    private Auther auther;
+   private Auther auther;
+
 
     public Long getId() {
         return id;
