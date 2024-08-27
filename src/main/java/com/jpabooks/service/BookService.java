@@ -1,34 +1,22 @@
 package com.jpabooks.service;
 
 import com.jpabooks.Repository.BookRepo;
+import com.jpabooks.base.BaseService;
 import com.jpabooks.entity.Book;
 import org.springframework.stereotype.Service;
 
 import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
-
 @Service
-public class BookService {
+public class BookService extends BaseService<Book,Long> {
     private final BookRepo bookRepo;
 
     public BookService(BookRepo bookRepo) {
         this.bookRepo = bookRepo;
     }
 
-    public Book findById(Long id) {
-        return bookRepo.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Book not found with ID: " + id));
-    }
-
     public List<Book> findAll() {
         return bookRepo.findAll();
-    }
-
-    public Book insert(Book entity) {
-        if (entity.getId() != null) {
-            throw new IllegalArgumentException("ID should be null when inserting a new book.");
-        }
-        return bookRepo.save(entity);
     }
 
     public List<Book> insertAll(List<Book> entities) {
@@ -40,13 +28,8 @@ public class BookService {
         book.setName(entity.getName());
         book.setPrice(entity.getPrice());
         book.setAuther(entity.getAuther());
-        return bookRepo.save(book);
+        return update(book);
     }
-
-    public void deleteById(Long id) {
-        bookRepo.deleteById(id);
-    }
-
     public int deleteByAuther(Long id){
         return bookRepo.deleteByAuther(id);
     }

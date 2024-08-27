@@ -1,5 +1,6 @@
 package com.jpabooks.Repository;
 
+import com.jpabooks.base.BaseRepo;
 import com.jpabooks.entity.Book;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.EntityGraph;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface BookRepo extends JpaRepository<Book,Long> {
+public interface BookRepo extends BaseRepo<Book,Long> {
     @Override
     //@EntityGraph(attributePaths = {"auther"} )
    //Using NamedGraph --> values

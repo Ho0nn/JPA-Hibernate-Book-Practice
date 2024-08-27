@@ -1,18 +1,16 @@
-package com.jpabooks.entity;
+ package com.jpabooks.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.jpabooks.base.BaseEntity;
 import jakarta.persistence.*;
-import org.hibernate.annotations.Formula;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "authors")
-public class Auther {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Auther extends BaseEntity<Long> {
+
 
     private String name;
 
@@ -23,7 +21,8 @@ public class Auther {
     @OneToMany(mappedBy = "auther")
     private List<Book> books = new ArrayList<>();
 
-    // Constructor
+
+
     public Auther() {}
 
     public Auther(String name) {
@@ -38,14 +37,6 @@ public class Auther {
     public void removeBook(Book book) {
         books.remove(book);
         book.setAuther(null);
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -71,4 +62,6 @@ public class Auther {
     public void setBooks(List<Book> books) {
         this.books = books;
     }
+
+
 }

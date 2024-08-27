@@ -1,17 +1,13 @@
 package com.jpabooks.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.jpabooks.base.BaseEntity;
 import jakarta.persistence.*;
-import org.hibernate.annotations.Formula;
 
 @NamedEntityGraph(name = "loadAuther", attributeNodes = @NamedAttributeNode("auther"))
 @Entity
 @Table(name = "books")
-public class Book {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+public class Book extends BaseEntity<Long> {
     private String name;
     private double price;
 
@@ -30,14 +26,6 @@ public class Book {
     public Book(String name, double price) {
         this.name = name;
         this.price = price;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -88,7 +76,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", disc=" + disc +
