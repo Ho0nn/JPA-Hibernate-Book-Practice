@@ -2,17 +2,16 @@ package com.jpabooks.base;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.MappedSuperclass;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @MappedSuperclass
-public  class BaseService<T extends BaseEntity<ID>, ID extends Number> {
-   // @Autowired
-    private BaseRepo<T, ID> baseRepo;
+public abstract class BaseService<T extends BaseEntity<ID>, ID extends Number> {
 
+    private final BaseRepo<T, ID> baseRepo;
+
+    public BaseService(BaseRepo<T, ID> baseRepo) {
+        this.baseRepo = baseRepo;
+    }
 
     public T findById(ID id) {
         return baseRepo.findById(id)

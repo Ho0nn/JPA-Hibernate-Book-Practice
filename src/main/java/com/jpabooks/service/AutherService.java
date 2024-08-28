@@ -10,7 +10,7 @@ public class AutherService extends BaseService<Auther,Long> {
     private final AutherRepo authRepo;
 
     public AutherService(AutherRepo authRepo) {
-       super();
+       super(authRepo);
         this.authRepo = authRepo;
     }
     @Override

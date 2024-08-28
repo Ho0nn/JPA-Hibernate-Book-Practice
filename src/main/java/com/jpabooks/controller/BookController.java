@@ -3,6 +3,7 @@ package com.jpabooks.controller;
 import com.jpabooks.entity.Book;
 import com.jpabooks.entity.BookDTO;
 import com.jpabooks.service.BookService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,13 +33,18 @@ public class BookController {
         return ResponseEntity.ok(bookService.findAll());
     }
 
-    @PostMapping
-    public ResponseEntity<?> insert(@RequestBody Book entity) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(bookService.insert(entity));
+    @PostMapping("")
+    public ResponseEntity<?> insert(@RequestBody @Valid BookDTO entity) {
+        Book book = new Book();
+        book.setName(entity.getName());
+        book.setPrice(entity.getPrice());
+        book.setAuther(entity.getAuther());
+
+        return ResponseEntity.ok(bookService.insert(book));
     }
 
     @PutMapping
-    public ResponseEntity<?> update(@RequestBody Book entity) {
+    public ResponseEntity<?> update(@RequestBody @Valid Book entity) {
         return ResponseEntity.ok(bookService.update(entity));
     }
 

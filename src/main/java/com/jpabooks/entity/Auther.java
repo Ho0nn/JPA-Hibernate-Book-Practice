@@ -1,32 +1,48 @@
- package com.jpabooks.entity;
+package com.jpabooks.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.jpabooks.base.BaseEntity;
+import com.jpabooks.validator.IpAddress;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import org.hibernate.annotations.Formula;
+import org.hibernate.annotations.SQLDelete;
 
 import java.util.ArrayList;
 import java.util.List;
-
 @Entity
 @Table(name = "authors")
 public class Auther extends BaseEntity<Long> {
 
-
+    @NotBlank
     private String name;
-
-    // @Formula("(select count(*) from books b where b.auther_id = id)")
-    private long bookCnt;
+    //@Pattern(regexp="^([0-9]{1,3})\\.([0-9]{1,3}\\.([0-9]{1,3})\\.([0-9]{1,3}))$")
+    @IpAddress(message = "Enter valid IP Address")
+    private String ipAddress;
+    @Email
+    private String email;
+//    @Formula("(select count(*) from books b where b.author_id = id)")
+//    private long bookCnt;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "auther")
+    @OneToMany(mappedBy = "auther", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> books = new ArrayList<>();
-
-
 
     public Auther() {}
 
     public Auther(String name) {
         this.name = name;
+    }
+
+    public @Email String getEmail() {
+        return email;
+    }
+
+    public void setEmail(@Email String email) {
+        this.email = email;
     }
 
     public void addBook(Book book) {
@@ -47,13 +63,21 @@ public class Auther extends BaseEntity<Long> {
         this.name = name;
     }
 
-    public long getBookCnt() {
-        return bookCnt;
+    public String getIpAddress() {
+        return ipAddress;
     }
 
-    public void setBookCnt(long bookCnt) {
-        this.bookCnt = bookCnt;
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
     }
+
+//    public long getBookCnt() {
+//        return bookCnt;
+//    }
+//
+//    public void setBookCnt(long bookCnt) {
+//        this.bookCnt = bookCnt;
+//    }
 
     public List<Book> getBooks() {
         return books;
@@ -62,6 +86,4 @@ public class Auther extends BaseEntity<Long> {
     public void setBooks(List<Book> books) {
         this.books = books;
     }
-
-
 }

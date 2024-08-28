@@ -8,9 +8,10 @@ import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.query.Param;
 
 @NoRepositoryBean
-public interface BaseRepo<T extends BaseEntity<ID>, ID extends Number> extends  JpaRepository<T,ID>{
-       @Modifying
-       @Transactional
-    @Query("update #{entityName} ent SET ent.statusCode= :statusCode WHERE ent.id= :id")
+public interface BaseRepo<T extends BaseEntity<ID>, ID extends Number> extends JpaRepository<T, ID> {
+
+    @Modifying
+    @Transactional
+    @Query("update #{#entityName} ent SET ent.statusCode = :statusCode WHERE ent.id = :id")
     void updateEntity(@Param("id") ID id, @Param("statusCode") Integer statusCode);
 }

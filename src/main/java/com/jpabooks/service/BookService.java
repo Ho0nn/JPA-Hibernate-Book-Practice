@@ -12,6 +12,7 @@ public class BookService extends BaseService<Book,Long> {
     private final BookRepo bookRepo;
 
     public BookService(BookRepo bookRepo) {
+        super(bookRepo);
         this.bookRepo = bookRepo;
     }
 

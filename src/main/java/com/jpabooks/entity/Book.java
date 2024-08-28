@@ -3,24 +3,29 @@ package com.jpabooks.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.jpabooks.base.BaseEntity;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 @NamedEntityGraph(name = "loadAuther", attributeNodes = @NamedAttributeNode("auther"))
 @Entity
 @Table(name = "books")
 public class Book extends BaseEntity<Long> {
+
+    @NotNull(message = "Enter book name")
     private String name;
+
+    @Min(value = 5)
+    @Max(value = 500)
     private double price;
 
-    //@Transient
     private double disc;
-
-   // @Formula("(select count(*) from books b where b.author_id = author_id)")
-    private long bookCnt;
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
     private Auther auther;
+
     public Book() {}
 
     public Book(String name, double price) {
@@ -52,14 +57,6 @@ public class Book extends BaseEntity<Long> {
         this.disc = disc;
     }
 
-    public long getBookCnt() {
-        return bookCnt;
-    }
-
-    public void setBookCnt(long bookCnt) {
-        this.bookCnt = bookCnt;
-    }
-
     public Auther getAuther() {
         return auther;
     }
@@ -80,7 +77,7 @@ public class Book extends BaseEntity<Long> {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", disc=" + disc +
-                ", bookCnt=" + bookCnt +
+                ", auther=" + auther.getName() +
                 '}';
     }
 }
