@@ -22,6 +22,8 @@ public abstract class BaseEntity <ID> {
     private LocalDateTime createdDate;
     @LastModifiedBy
     private String lastModifiedBy;
+    private boolean isDeleted;
+
     @LastModifiedDate
     private LocalDateTime lastModifiedDate;
 

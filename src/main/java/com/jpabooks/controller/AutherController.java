@@ -1,6 +1,6 @@
 package com.jpabooks.controller;
-
 import com.jpabooks.entity.Auther;
+import com.jpabooks.entity.AutherSearch;
 import com.jpabooks.service.AutherService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
@@ -42,5 +42,9 @@ public class AutherController {
     public ResponseEntity<?> deleteById(@PathVariable Long id) {
         authService.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+    @PostMapping("/spec")
+    public ResponseEntity<?> findByAutherSpec(@RequestBody AutherSearch search) {
+        return ResponseEntity.ok(authService.findByAutherSpec(search));
     }
 }

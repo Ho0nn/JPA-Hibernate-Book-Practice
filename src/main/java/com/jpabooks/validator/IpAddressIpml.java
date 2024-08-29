@@ -1,8 +1,6 @@
 package com.jpabooks.validator;
-
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-
 import java.util.regex.Pattern;
 
 public class IpAddressIpml implements ConstraintValidator<IpAddress, String> {

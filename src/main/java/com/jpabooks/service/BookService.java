@@ -1,11 +1,10 @@
 package com.jpabooks.service;
 
-import com.jpabooks.Repository.BookRepo;
+import com.jpabooks.repository.BookRepo;
 import com.jpabooks.base.BaseService;
 import com.jpabooks.entity.Book;
 import org.springframework.stereotype.Service;
 
-import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 @Service
 public class BookService extends BaseService<Book,Long> {
