@@ -3,12 +3,19 @@ package com.jpabooks.service;
 import com.jpabooks.repository.BookRepo;
 import com.jpabooks.base.BaseService;
 import com.jpabooks.entity.Book;
+import jakarta.persistence.EntityManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public class BookService extends BaseService<Book,Long> {
     private final BookRepo bookRepo;
+    @Autowired
+    private EntityManager em;
+    @Autowired
+    private Environment env;
 
     public BookService(BookRepo bookRepo) {
         super(bookRepo);
@@ -31,7 +38,7 @@ public class BookService extends BaseService<Book,Long> {
         return update(book);
     }
     public int deleteByAuther(Long id){
-        return bookRepo.deleteByAuther(id);
+        return bookRepo.deleteByAutherId(id);
     }
 
 }

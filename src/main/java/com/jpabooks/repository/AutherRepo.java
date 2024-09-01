@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 
 @Repository
 public interface AutherRepo extends BaseRepo<Auther,Long>, JpaSpecificationExecutor<Auther>{
@@ -15,4 +17,6 @@ public interface AutherRepo extends BaseRepo<Auther,Long>, JpaSpecificationExecu
     @Query(value="UPDATE Auther a set a.isDeleted= false where a.id=?1")
     @Modifying
     public void restorById(Long id);
+
+    Optional<Auther> findByEmail(String email);
 }

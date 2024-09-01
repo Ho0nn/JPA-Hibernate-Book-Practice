@@ -1,6 +1,7 @@
 package com.jpabooks.service;
 
 import com.jpabooks.entity.AutherSearch;
+import com.jpabooks.errors.DuplicateRecordException;
 import com.jpabooks.repository.AutherRepo;
 import com.jpabooks.base.BaseService;
 import com.jpabooks.entity.Auther;
@@ -9,11 +10,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AutherService extends BaseService<Auther,Long> {
     @Autowired
     private AutherRepo autherRepo;
+
+    @Override
+    public Auther insert(Auther entity) {
+        if (entity.getEmail().isEmpty() && entity.getEmail()!=null){
+            Optional<Auther> auther = findByEmail(entity.getEmail());
+            if(auther.isPresent())throw new DuplicateRecordException("This Email already found!");
+
+        }
+        return super.insert(entity);
+    }
 
     public AutherService(AutherRepo authRepo) {
        super(authRepo);
@@ -28,6 +40,9 @@ public class AutherService extends BaseService<Auther,Long> {
     public List<Auther> findByAutherSpec(AutherSearch search) {
         AutherSpec autherSpec = new AutherSpec(search);
             return autherRepo.findAll(autherSpec);
-
     }
+    private Optional<Auther> findByEmail(String email){
+        return autherRepo.findByEmail(email);
+    }
+
 }

@@ -1,8 +1,9 @@
 package com.jpabooks.base;
 
-import jakarta.persistence.EntityNotFoundException;
+import com.jpabooks.errors.RecordNotFoundException;
 import jakarta.persistence.MappedSuperclass;
 import java.util.List;
+import java.util.Optional;
 
 @MappedSuperclass
 public abstract class BaseService<T extends BaseEntity<ID>, ID extends Number> {
@@ -14,8 +15,9 @@ public abstract class BaseService<T extends BaseEntity<ID>, ID extends Number> {
     }
 
     public T findById(ID id) {
-        return baseRepo.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Entity not found with ID: " + id));
+        Optional<T> entity= baseRepo.findById(id);
+        if (entity.isPresent()) return entity.get();
+        else throw new RecordNotFoundException("This Record with ID:- "+id + " not found.");
     }
 
     public T getById(ID id) {
