@@ -6,8 +6,6 @@ import com.jpabooks.validator.IpAddress;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.Where;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,14 +14,13 @@ import java.util.List;
 @Entity
 @Table(name = "authors")
 public class Auther extends BaseEntity<Long> {
-
     @NotBlank
     private String name;
     //@Pattern(regexp="^([0-9]{1,3})\\.([0-9]{1,3}\\.([0-9]{1,3})\\.([0-9]{1,3}))$")
-    @IpAddress(message = "Enter valid IP Address")
+    @IpAddress()
     private String ipAddress;
 
-    @Email
+    @Email(message = "{validation.constraints.email.message}")
     private String email;
 //    @Formula("(select count(*) from books b where b.author_id = id)")
 //    private long bookCnt;
