@@ -6,6 +6,7 @@ import com.jpabooks.validator.IpAddress;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class Auther extends BaseEntity<Long> {
     @IpAddress()
     private String ipAddress;
 
-    @Email(message = "{validation.constraints.email.message}")
+    @Email(message = "validation.constraints.email.message")
     private String email;
 //    @Formula("(select count(*) from books b where b.author_id = id)")
 //    private long bookCnt;

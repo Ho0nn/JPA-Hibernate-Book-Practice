@@ -15,7 +15,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({FIELD})
 @Retention(RUNTIME)
 public @interface IpAddress {
-    String message() default "{validation.constraints.ip-address.message}";
+    String message() default "validation.constraints.ip-address.message";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

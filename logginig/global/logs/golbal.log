@@ -1,0 +1,233 @@
+2024-09-02T04:49:23.321+02:00  INFO 27720 --- [JPA-Books] [main] com.jpabooks.JpaBooksApplication         : Starting JpaBooksApplication using Java 19.0.2 with PID 27720 (F:\My Journy\REPOs\JPA-Books\target\classes started by pc in F:\My Journy\REPOs\JPA-Books)
+2024-09-02T04:49:23.325+02:00  INFO 27720 --- [JPA-Books] [main] com.jpabooks.JpaBooksApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-09-02T04:49:24.621+02:00  INFO 27720 --- [JPA-Books] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-02T04:49:24.743+02:00  INFO 27720 --- [JPA-Books] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 2 JPA repository interfaces.
+2024-09-02T04:49:25.923+02:00  INFO 27720 --- [JPA-Books] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2024-09-02T04:49:25.948+02:00  INFO 27720 --- [JPA-Books] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-02T04:49:25.948+02:00  INFO 27720 --- [JPA-Books] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-02T04:49:26.048+02:00  INFO 27720 --- [JPA-Books] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-02T04:49:26.049+02:00  INFO 27720 --- [JPA-Books] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2647 ms
+2024-09-02T04:49:26.341+02:00  INFO 27720 --- [JPA-Books] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-02T04:49:26.474+02:00  INFO 27720 --- [JPA-Books] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-02T04:49:26.552+02:00  INFO 27720 --- [JPA-Books] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-02T04:49:26.698+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BasicTypeReference@7364f68
+2024-09-02T04:49:26.698+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BasicTypeReference@7364f68
+2024-09-02T04:49:26.698+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Boolean -> org.hibernate.type.BasicTypeReference@7364f68
+2024-09-02T04:49:26.698+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration numeric_boolean -> org.hibernate.type.BasicTypeReference@55a0f011
+2024-09-02T04:49:26.698+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.NumericBooleanConverter -> org.hibernate.type.BasicTypeReference@55a0f011
+2024-09-02T04:49:26.698+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration true_false -> org.hibernate.type.BasicTypeReference@7ea42c82
+2024-09-02T04:49:26.698+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.TrueFalseConverter -> org.hibernate.type.BasicTypeReference@7ea42c82
+2024-09-02T04:49:26.699+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration yes_no -> org.hibernate.type.BasicTypeReference@39133244
+2024-09-02T04:49:26.699+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.YesNoConverter -> org.hibernate.type.BasicTypeReference@39133244
+2024-09-02T04:49:26.699+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.BasicTypeReference@ceb7701
+2024-09-02T04:49:26.699+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.BasicTypeReference@ceb7701
+2024-09-02T04:49:26.699+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Byte -> org.hibernate.type.BasicTypeReference@ceb7701
+2024-09-02T04:49:26.699+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary -> org.hibernate.type.BasicTypeReference@5e193ef5
+2024-09-02T04:49:26.700+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte[] -> org.hibernate.type.BasicTypeReference@5e193ef5
+2024-09-02T04:49:26.700+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration [B -> org.hibernate.type.BasicTypeReference@5e193ef5
+2024-09-02T04:49:26.700+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary_wrapper -> org.hibernate.type.BasicTypeReference@106c988
+2024-09-02T04:49:26.700+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-binary -> org.hibernate.type.BasicTypeReference@106c988
+2024-09-02T04:49:26.700+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration image -> org.hibernate.type.BasicTypeReference@21274afe
+2024-09-02T04:49:26.700+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration blob -> org.hibernate.type.BasicTypeReference@76a362a4
+2024-09-02T04:49:26.701+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Blob -> org.hibernate.type.BasicTypeReference@76a362a4
+2024-09-02T04:49:26.701+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob -> org.hibernate.type.BasicTypeReference@61da0413
+2024-09-02T04:49:26.701+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob_wrapper -> org.hibernate.type.BasicTypeReference@5627cb29
+2024-09-02T04:49:26.701+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.BasicTypeReference@4d4c1ba9
+2024-09-02T04:49:26.701+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.BasicTypeReference@4d4c1ba9
+2024-09-02T04:49:26.701+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Short -> org.hibernate.type.BasicTypeReference@4d4c1ba9
+2024-09-02T04:49:26.701+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration integer -> org.hibernate.type.BasicTypeReference@2017f6e6
+2024-09-02T04:49:26.701+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration int -> org.hibernate.type.BasicTypeReference@2017f6e6
+2024-09-02T04:49:26.702+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Integer -> org.hibernate.type.BasicTypeReference@2017f6e6
+2024-09-02T04:49:26.702+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.BasicTypeReference@115c946b
+2024-09-02T04:49:26.702+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.BasicTypeReference@115c946b
+2024-09-02T04:49:26.702+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Long -> org.hibernate.type.BasicTypeReference@115c946b
+2024-09-02T04:49:26.702+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.BasicTypeReference@79ca7bea
+2024-09-02T04:49:26.702+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.BasicTypeReference@79ca7bea
+2024-09-02T04:49:26.702+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Float -> org.hibernate.type.BasicTypeReference@79ca7bea
+2024-09-02T04:49:26.702+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.BasicTypeReference@54f6b629
+2024-09-02T04:49:26.703+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.BasicTypeReference@54f6b629
+2024-09-02T04:49:26.703+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Double -> org.hibernate.type.BasicTypeReference@54f6b629
+2024-09-02T04:49:26.703+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_integer -> org.hibernate.type.BasicTypeReference@4bc9ca97
+2024-09-02T04:49:26.703+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigInteger -> org.hibernate.type.BasicTypeReference@4bc9ca97
+2024-09-02T04:49:26.703+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_decimal -> org.hibernate.type.BasicTypeReference@3e43f049
+2024-09-02T04:49:26.703+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigDecimal -> org.hibernate.type.BasicTypeReference@3e43f049
+2024-09-02T04:49:26.703+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration character -> org.hibernate.type.BasicTypeReference@147cc940
+2024-09-02T04:49:26.704+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration char -> org.hibernate.type.BasicTypeReference@147cc940
+2024-09-02T04:49:26.704+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Character -> org.hibernate.type.BasicTypeReference@147cc940
+2024-09-02T04:49:26.704+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration character_nchar -> org.hibernate.type.BasicTypeReference@755a7218
+2024-09-02T04:49:26.704+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration string -> org.hibernate.type.BasicTypeReference@70c29356
+2024-09-02T04:49:26.704+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.String -> org.hibernate.type.BasicTypeReference@70c29356
+2024-09-02T04:49:26.704+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration nstring -> org.hibernate.type.BasicTypeReference@5122e4bf
+2024-09-02T04:49:26.704+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration characters -> org.hibernate.type.BasicTypeReference@23e61112
+2024-09-02T04:49:26.704+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration char[] -> org.hibernate.type.BasicTypeReference@23e61112
+2024-09-02T04:49:26.704+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration [C -> org.hibernate.type.BasicTypeReference@23e61112
+2024-09-02T04:49:26.704+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-characters -> org.hibernate.type.BasicTypeReference@58a7dc4
+2024-09-02T04:49:26.704+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration text -> org.hibernate.type.BasicTypeReference@61b60600
+2024-09-02T04:49:26.705+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration ntext -> org.hibernate.type.BasicTypeReference@27f71195
+2024-09-02T04:49:26.705+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration clob -> org.hibernate.type.BasicTypeReference@340afaf8
+2024-09-02T04:49:26.705+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Clob -> org.hibernate.type.BasicTypeReference@340afaf8
+2024-09-02T04:49:26.705+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration nclob -> org.hibernate.type.BasicTypeReference@6238d5e0
+2024-09-02T04:49:26.705+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.NClob -> org.hibernate.type.BasicTypeReference@6238d5e0
+2024-09-02T04:49:26.705+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob -> org.hibernate.type.BasicTypeReference@336f49a1
+2024-09-02T04:49:26.705+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_char_array -> org.hibernate.type.BasicTypeReference@2c8b8de0
+2024-09-02T04:49:26.705+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_character_array -> org.hibernate.type.BasicTypeReference@4fb57fb3
+2024-09-02T04:49:26.705+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob -> org.hibernate.type.BasicTypeReference@6b063470
+2024-09-02T04:49:26.706+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_character_array -> org.hibernate.type.BasicTypeReference@226d5af0
+2024-09-02T04:49:26.706+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_char_array -> org.hibernate.type.BasicTypeReference@527937d0
+2024-09-02T04:49:26.706+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> org.hibernate.type.BasicTypeReference@36d582cb
+2024-09-02T04:49:26.706+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> org.hibernate.type.BasicTypeReference@36d582cb
+2024-09-02T04:49:26.706+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDateTime -> org.hibernate.type.BasicTypeReference@6c2a95d5
+2024-09-02T04:49:26.706+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDateTime -> org.hibernate.type.BasicTypeReference@6c2a95d5
+2024-09-02T04:49:26.707+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDate -> org.hibernate.type.BasicTypeReference@24d8f87a
+2024-09-02T04:49:26.707+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDate -> org.hibernate.type.BasicTypeReference@24d8f87a
+2024-09-02T04:49:26.707+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalTime -> org.hibernate.type.BasicTypeReference@3f048c86
+2024-09-02T04:49:26.707+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalTime -> org.hibernate.type.BasicTypeReference@3f048c86
+2024-09-02T04:49:26.707+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -> org.hibernate.type.BasicTypeReference@255d9277
+2024-09-02T04:49:26.708+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -> org.hibernate.type.BasicTypeReference@255d9277
+2024-09-02T04:49:26.708+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@1de13f34
+2024-09-02T04:49:26.708+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@7e191fda
+2024-09-02T04:49:26.708+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -> org.hibernate.type.BasicTypeReference@6562cc23
+2024-09-02T04:49:26.708+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> org.hibernate.type.BasicTypeReference@6562cc23
+2024-09-02T04:49:26.708+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeUtc -> org.hibernate.type.BasicTypeReference@2ce524d2
+2024-09-02T04:49:26.709+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithTimezone -> org.hibernate.type.BasicTypeReference@3869a6e5
+2024-09-02T04:49:26.709+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@e3899fd
+2024-09-02T04:49:26.709+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -> org.hibernate.type.BasicTypeReference@7d484fcd
+2024-09-02T04:49:26.709+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -> org.hibernate.type.BasicTypeReference@7d484fcd
+2024-09-02T04:49:26.709+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@788e3702
+2024-09-02T04:49:26.709+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@d25e878
+2024-09-02T04:49:26.709+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration date -> org.hibernate.type.BasicTypeReference@47187f50
+2024-09-02T04:49:26.709+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Date -> org.hibernate.type.BasicTypeReference@47187f50
+2024-09-02T04:49:26.709+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration time -> org.hibernate.type.BasicTypeReference@78116659
+2024-09-02T04:49:26.709+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Time -> org.hibernate.type.BasicTypeReference@78116659
+2024-09-02T04:49:26.709+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration timestamp -> org.hibernate.type.BasicTypeReference@712e787e
+2024-09-02T04:49:26.710+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Timestamp -> org.hibernate.type.BasicTypeReference@712e787e
+2024-09-02T04:49:26.710+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Date -> org.hibernate.type.BasicTypeReference@712e787e
+2024-09-02T04:49:26.710+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar -> org.hibernate.type.BasicTypeReference@53ea380b
+2024-09-02T04:49:26.710+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Calendar -> org.hibernate.type.BasicTypeReference@53ea380b
+2024-09-02T04:49:26.710+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.BasicTypeReference@53ea380b
+2024-09-02T04:49:26.710+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_date -> org.hibernate.type.BasicTypeReference@578c3fd9
+2024-09-02T04:49:26.710+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_time -> org.hibernate.type.BasicTypeReference@245cb8df
+2024-09-02T04:49:26.710+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration instant -> org.hibernate.type.BasicTypeReference@26b3c9a2
+2024-09-02T04:49:26.710+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Instant -> org.hibernate.type.BasicTypeReference@26b3c9a2
+2024-09-02T04:49:26.711+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid -> org.hibernate.type.BasicTypeReference@241b971f
+2024-09-02T04:49:26.711+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -> org.hibernate.type.BasicTypeReference@241b971f
+2024-09-02T04:49:26.711+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration pg-uuid -> org.hibernate.type.BasicTypeReference@241b971f
+2024-09-02T04:49:26.711+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-binary -> org.hibernate.type.BasicTypeReference@125f16b2
+2024-09-02T04:49:26.711+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-char -> org.hibernate.type.BasicTypeReference@5384ce66
+2024-09-02T04:49:26.711+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration class -> org.hibernate.type.BasicTypeReference@6b42e36d
+2024-09-02T04:49:26.711+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Class -> org.hibernate.type.BasicTypeReference@6b42e36d
+2024-09-02T04:49:26.711+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration currency -> org.hibernate.type.BasicTypeReference@13192275
+2024-09-02T04:49:26.711+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration Currency -> org.hibernate.type.BasicTypeReference@13192275
+2024-09-02T04:49:26.712+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Currency -> org.hibernate.type.BasicTypeReference@13192275
+2024-09-02T04:49:26.712+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration locale -> org.hibernate.type.BasicTypeReference@79195c22
+2024-09-02T04:49:26.712+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Locale -> org.hibernate.type.BasicTypeReference@79195c22
+2024-09-02T04:49:26.712+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration serializable -> org.hibernate.type.BasicTypeReference@c9b5a99
+2024-09-02T04:49:26.712+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.io.Serializable -> org.hibernate.type.BasicTypeReference@c9b5a99
+2024-09-02T04:49:26.712+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration timezone -> org.hibernate.type.BasicTypeReference@70be89ec
+2024-09-02T04:49:26.712+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.TimeZone -> org.hibernate.type.BasicTypeReference@70be89ec
+2024-09-02T04:49:26.713+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZoneOffset -> org.hibernate.type.BasicTypeReference@2aee0704
+2024-09-02T04:49:26.713+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZoneOffset -> org.hibernate.type.BasicTypeReference@2aee0704
+2024-09-02T04:49:26.713+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration url -> org.hibernate.type.BasicTypeReference@19a5b637
+2024-09-02T04:49:26.713+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.net.URL -> org.hibernate.type.BasicTypeReference@19a5b637
+2024-09-02T04:49:26.714+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration vector -> org.hibernate.type.BasicTypeReference@4f3c7808
+2024-09-02T04:49:26.714+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration row_version -> org.hibernate.type.BasicTypeReference@4b4969ea
+2024-09-02T04:49:26.723+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration object -> org.hibernate.type.JavaObjectType@5329f6b3
+2024-09-02T04:49:26.723+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -> org.hibernate.type.JavaObjectType@5329f6b3
+2024-09-02T04:49:26.725+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration null -> org.hibernate.type.NullType@191ec193
+2024-09-02T04:49:26.726+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_date -> org.hibernate.type.BasicTypeReference@6321a5aa
+2024-09-02T04:49:26.726+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_time -> org.hibernate.type.BasicTypeReference@7a36c83a
+2024-09-02T04:49:26.726+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_timestamp -> org.hibernate.type.BasicTypeReference@154b8cb6
+2024-09-02T04:49:26.726+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar -> org.hibernate.type.BasicTypeReference@7b297740
+2024-09-02T04:49:26.726+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_date -> org.hibernate.type.BasicTypeReference@1b7554d4
+2024-09-02T04:49:26.726+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_time -> org.hibernate.type.BasicTypeReference@57ce2898
+2024-09-02T04:49:26.726+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_binary -> org.hibernate.type.BasicTypeReference@1ea930eb
+2024-09-02T04:49:26.726+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_serializable -> org.hibernate.type.BasicTypeReference@2e0ad709
+2024-09-02T04:49:27.160+02:00  INFO 27720 --- [JPA-Books] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-02T04:49:27.218+02:00  INFO 27720 --- [JPA-Books] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-02T04:49:27.854+02:00  INFO 27720 --- [JPA-Books] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10a0a1e
+2024-09-02T04:49:27.857+02:00  INFO 27720 --- [JPA-Books] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-02T04:49:28.012+02:00  WARN 27720 --- [JPA-Books] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-02T04:49:28.014+02:00  WARN 27720 --- [JPA-Books] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-02T04:49:28.060+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(12, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@ce19c86) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@68479e8b)
+2024-09-02T04:49:28.060+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(-9, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@4e951fb1) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1b317e7d)
+2024-09-02T04:49:28.060+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(-3, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1bb4c431) replaced previous registration(org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@4fd3b20a)
+2024-09-02T04:49:28.061+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(4003, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@295d54d6) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@398f0516)
+2024-09-02T04:49:28.061+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(4001, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4a7db5a) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@56b66a26)
+2024-09-02T04:49:28.061+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(4002, org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@158e6fc2) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@54687fd0)
+2024-09-02T04:49:28.061+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2004, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6eaf030c) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@b2da3a5)
+2024-09-02T04:49:28.061+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2005, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6dbb3d7d) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@7a3a49e5)
+2024-09-02T04:49:28.061+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2011, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@6c1b82cd) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@acd3460)
+2024-09-02T04:49:28.065+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NCharTypeDescriptor) replaced previous registration(CharTypeDescriptor)
+2024-09-02T04:49:28.065+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NVarcharTypeDescriptor) replaced previous registration(VarcharTypeDescriptor)
+2024-09-02T04:49:28.067+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(LongNVarcharTypeDescriptor) replaced previous registration(LongVarcharTypeDescriptor)
+2024-09-02T04:49:28.071+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NClobTypeDescriptor(DEFAULT)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+2024-09-02T04:49:28.071+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(2005, ClobTypeDescriptor(STREAM_BINDING)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+2024-09-02T04:49:28.077+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration null -> org.hibernate.type.NullType@7a7f9d45
+2024-09-02T04:49:28.077+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Type registration key [null] overrode previous entry : `org.hibernate.type.NullType@191ec193`
+2024-09-02T04:49:28.086+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.DurationType -> basicType@1(java.time.Duration,3015)
+2024-09-02T04:49:28.086+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> basicType@1(java.time.Duration,3015)
+2024-09-02T04:49:28.086+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> basicType@1(java.time.Duration,3015)
+2024-09-02T04:49:28.093+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.OffsetDateTimeType -> basicType@2(java.time.OffsetDateTime,3003)
+2024-09-02T04:49:28.093+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -> basicType@2(java.time.OffsetDateTime,3003)
+2024-09-02T04:49:28.093+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -> basicType@2(java.time.OffsetDateTime,3003)
+2024-09-02T04:49:28.093+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.ZonedDateTimeType -> basicType@3(java.time.ZonedDateTime,3003)
+2024-09-02T04:49:28.093+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -> basicType@3(java.time.ZonedDateTime,3003)
+2024-09-02T04:49:28.093+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -> basicType@3(java.time.ZonedDateTime,3003)
+2024-09-02T04:49:28.095+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.OffsetTimeType -> basicType@4(java.time.OffsetTime,3007)
+2024-09-02T04:49:28.095+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -> basicType@4(java.time.OffsetTime,3007)
+2024-09-02T04:49:28.095+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> basicType@4(java.time.OffsetTime,3007)
+2024-09-02T04:49:28.097+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@69f3e556] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@1eb9d69a]
+2024-09-02T04:49:29.941+02:00  INFO 27720 --- [JPA-Books] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-02T04:49:29.942+02:00 DEBUG 27720 --- [JPA-Books] [main] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@69f3e556] to SessionFactoryImplementor [org.hibernate.internal.SessionFactoryImpl@408b2ae2]
+2024-09-02T04:49:30.128+02:00 TRACE 27720 --- [JPA-Books] [main] o.h.type.spi.TypeConfiguration$Scope     : Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@408b2ae2] for TypeConfiguration
+2024-09-02T04:49:30.129+02:00  INFO 27720 --- [JPA-Books] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-02T04:49:30.644+02:00  INFO 27720 --- [JPA-Books] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-02T04:49:31.561+02:00  WARN 27720 --- [JPA-Books] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-02T04:49:32.142+02:00  INFO 27720 --- [JPA-Books] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2024-09-02T04:49:32.156+02:00  INFO 27720 --- [JPA-Books] [main] com.jpabooks.JpaBooksApplication         : Started JpaBooksApplication in 9.789 seconds (process running for 11.3)
+2024-09-02T04:49:32.318+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.created_by,
+        a1_0.created_date,
+        a1_0.email,
+        a1_0.ip_address,
+        a1_0.is_deleted,
+        a1_0.last_modified_by,
+        a1_0.last_modified_date,
+        a1_0.name,
+        a1_0.status_code 
+    from
+        authors a1_0
+2024-09-02T04:49:32.381+02:00 DEBUG 27720 --- [JPA-Books] [main] org.hibernate.SQL                        : 
+    select
+        b1_0.id,
+        a1_0.id,
+        a1_0.created_by,
+        a1_0.created_date,
+        a1_0.email,
+        a1_0.ip_address,
+        a1_0.is_deleted,
+        a1_0.last_modified_by,
+        a1_0.last_modified_date,
+        a1_0.name,
+        a1_0.status_code,
+        b1_0.created_by,
+        b1_0.created_date,
+        b1_0.disc,
+        b1_0.is_deleted,
+        b1_0.last_modified_by,
+        b1_0.last_modified_date,
+        b1_0.name,
+        b1_0.price,
+        b1_0.status_code 
+    from
+        books b1_0 
+    left join
+        authors a1_0 
+            on a1_0.id=b1_0.author_id
+2024-09-02T04:51:53.230+02:00  INFO 27720 --- [JPA-Books] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-02T04:51:53.401+02:00 TRACE 27720 --- [JPA-Books] [SpringApplicationShutdownHook] o.h.type.spi.TypeConfiguration$Scope     : Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@408b2ae2] for TypeConfiguration
+2024-09-02T04:51:53.402+02:00 DEBUG 27720 --- [JPA-Books] [SpringApplicationShutdownHook] o.h.type.spi.TypeConfiguration$Scope     : Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@301dd9c2] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@408b2ae2]
+2024-09-02T04:51:53.430+02:00  INFO 27720 --- [JPA-Books] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-09-02T04:51:53.466+02:00  INFO 27720 --- [JPA-Books] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
