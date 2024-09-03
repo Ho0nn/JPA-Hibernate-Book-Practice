@@ -22,6 +22,11 @@ public class AutherController {
     public ResponseEntity<?> findById(@PathVariable @Min(value = 2) @Max(value = 200) Long id) {
         return ResponseEntity.ok(authService.findById(id));
     }
+    @GetMapping("/{email}")
+    public ResponseEntity<?> findByEmail(@PathVariable String email){
+        return ResponseEntity.ok(authService.findByEmail(email));
+    }
+
 
     @GetMapping
     public ResponseEntity<?> findAll() {

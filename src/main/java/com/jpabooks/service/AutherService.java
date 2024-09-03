@@ -9,10 +9,12 @@ import com.jpabooks.repository.AutherSpec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class AutherService extends BaseService<Auther,Long> {
@@ -22,10 +24,10 @@ public class AutherService extends BaseService<Auther,Long> {
     @Override
     public Auther insert(Auther entity) {
         if (!entity.getEmail().isEmpty() && entity.getEmail()!=null){
-            Optional<Auther> auther = findByEmail(entity.getEmail());
+            CompletableFuture<Auther> auther = findByEmail(entity.getEmail());
             //System.out.println("email is >> "+entity.getEmail());
             log.info("auther name  {} and email is {}",entity.getName(),entity.getEmail());
-            if(auther.isPresent())throw new DuplicateRecordException("This Email already found!");
+            if(auther.isDone())throw new DuplicateRecordException("This Email already found!");
         }
         return super.insert(entity);
     }
@@ -44,8 +46,9 @@ public class AutherService extends BaseService<Auther,Long> {
         AutherSpec autherSpec = new AutherSpec(search);
             return autherRepo.findAll(autherSpec);
     }
-    private Optional<Auther> findByEmail(String email){
-        return autherRepo.findByEmail(email);
+    @Async
+    public CompletableFuture<Auther> findByEmail(String email){
+        return CompletableFuture.completedFuture(autherRepo.findByEmail(email).get());
     }
 
 }
