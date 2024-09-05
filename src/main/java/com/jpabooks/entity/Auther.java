@@ -21,7 +21,7 @@ public class Auther extends BaseEntity<Long> {
     @IpAddress()
     private String ipAddress;
 
-    @Email(message = "validation.constraints.email.message")
+    @Email(message = "{validation.constraints.email.message}")
     private String email;
 //    @Formula("(select count(*) from books b where b.author_id = id)")
 //    private long bookCnt;
@@ -39,7 +39,6 @@ public class Auther extends BaseEntity<Long> {
     public @Email String getEmail() {
         return email;
     }
-
     public void setEmail(@Email String email) {
         this.email = email;
     }

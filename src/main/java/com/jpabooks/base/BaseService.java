@@ -29,7 +29,6 @@ public  class BaseService<T extends BaseEntity<ID>, ID extends Number> {
             throw new RecordNotFoundException(msg);
         }
     }
-
     public T getById(ID id) {
         return baseRepo.getById(id);
     }

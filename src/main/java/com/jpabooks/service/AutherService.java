@@ -21,20 +21,22 @@ public class AutherService extends BaseService<Auther,Long> {
     @Autowired
     private AutherRepo autherRepo;
     Logger log = LoggerFactory.getLogger(AutherService.class);
+    public AutherService(AutherRepo authRepo) {
+       super(authRepo);
+        this.autherRepo = authRepo;
+    }
     @Override
     public Auther insert(Auther entity) {
         if (!entity.getEmail().isEmpty() && entity.getEmail()!=null){
             CompletableFuture<Auther> auther = findByEmail(entity.getEmail());
             //System.out.println("email is >> "+entity.getEmail());
             log.info("auther name  {} and email is {}",entity.getName(),entity.getEmail());
-            if(auther.isDone())throw new DuplicateRecordException("This Email already found!");
+            if(auther.isDone()){
+//
+                throw new DuplicateRecordException("This Email already found!");
+            }
         }
         return super.insert(entity);
-    }
-
-    public AutherService(AutherRepo authRepo) {
-       super(authRepo);
-        this.autherRepo = authRepo;
     }
     @Override
     public Auther update(Auther entity) {
