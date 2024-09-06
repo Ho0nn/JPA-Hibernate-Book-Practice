@@ -36,7 +36,7 @@ public class SchedulerConfig implements AsyncConfigurer {
 		  executor.setCorePoolSize(4);
 		  executor.setMaxPoolSize(4);
 		  executor.setQueueCapacity(50);
-		  executor.setThreadNamePrefix("Asynch Thead::");
+		  executor.setThreadNamePrefix("Async Thead::");
 		  executor.initialize();
 		  return executor;
 	  }

@@ -21,6 +21,16 @@ public class Auther extends BaseEntity<Long> {
     @IpAddress()
     private String ipAddress;
 
+    private String imgPath;
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
     @Email(message = "{validation.constraints.email.message}")
     private String email;
 //    @Formula("(select count(*) from books b where b.author_id = id)")

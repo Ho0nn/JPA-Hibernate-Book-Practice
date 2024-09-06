@@ -29,6 +29,8 @@
     </scm>
     <properties>
         <java.version>17</java.version>
+        <aws-java-sdk.version>1.11.750</aws-java-sdk.version>
+
     </properties>
     <dependencies>
 
@@ -107,6 +109,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId></dependency>
+        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3 -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-s3</artifactId>
+            <version>${aws-java-sdk.version}</version>
+        </dependency>
 
     </dependencies>
 
