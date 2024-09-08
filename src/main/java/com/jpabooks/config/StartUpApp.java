@@ -30,7 +30,7 @@ public class StartUpApp implements CommandLineRunner {
             auther3.setName("Ahmed");
             autherService.insertAll(Arrays.asList(auther1, auther2, auther3));
         }
-        if (bookService.findAll().isEmpty()) {
+        if (bookService.findAll().isEmpty()&&bookService.findAll()==null) {
             Book book1 = new Book();
             book1.setName("JPA");
             book1.setPrice(300);

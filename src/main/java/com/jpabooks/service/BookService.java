@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 @Service
 public class BookService extends BaseService<Book,Long> {
@@ -23,8 +24,10 @@ public class BookService extends BaseService<Book,Long> {
     }
 
     public List<Book> findAll() {
-        return bookRepo.findAll();
+        List<Book> books = bookRepo.findAll();
+        return books != null ? books : Collections.emptyList();
     }
+
 
     public List<Book> insertAll(List<Book> entities) {
         return bookRepo.saveAll(entities);
