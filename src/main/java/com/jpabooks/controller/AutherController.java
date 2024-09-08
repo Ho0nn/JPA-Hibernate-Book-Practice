@@ -23,7 +23,6 @@ public class AutherController {
         this.authService = authService;
     }
 
-
     @Operation(summary = "Find Author by ID")
     @ApiResponses(value={
             @ApiResponse(responseCode = "200",description = "Found Author",
