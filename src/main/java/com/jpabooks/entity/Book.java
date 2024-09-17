@@ -6,10 +6,20 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @NamedEntityGraph(name = "loadAuther", attributeNodes = @NamedAttributeNode("auther"))
 @Entity
 @Table(name = "books")
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Book extends BaseEntity<Long> {
 
     @NotNull(message = "Enter book name")
@@ -26,58 +36,4 @@ public class Book extends BaseEntity<Long> {
     @JoinColumn(name = "author_id")
     private Auther auther;
 
-    public Book() {}
-
-    public Book(String name, double price) {
-        this.name = name;
-        this.price = price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public double getDisc() {
-        return disc;
-    }
-
-    public void setDisc(double disc) {
-        this.disc = disc;
-    }
-
-    public Auther getAuther() {
-        return auther;
-    }
-
-    public void setAuther(Auther auther) {
-        this.auther = auther;
-    }
-
-    @PostLoad
-    private void calcDisc() {
-        this.setDisc(price * 0.25);
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + getId() +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", disc=" + disc +
-                ", auther=" + auther.getName() +
-                '}';
-    }
 }

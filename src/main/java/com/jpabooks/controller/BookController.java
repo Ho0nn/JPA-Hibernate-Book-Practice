@@ -4,18 +4,17 @@ import com.jpabooks.entity.Book;
 import com.jpabooks.entity.BookDTO;
 import com.jpabooks.service.BookService;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/book")
+@RequiredArgsConstructor
 public class BookController {
     private final BookService bookService;
-
-    public BookController(BookService bookService) {
-        this.bookService = bookService;
-    }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id) {

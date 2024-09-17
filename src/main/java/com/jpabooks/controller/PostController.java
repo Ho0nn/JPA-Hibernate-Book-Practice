@@ -5,6 +5,7 @@ import com.jpabooks.entity.PostDTO;
 import com.jpabooks.service.PostService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -17,8 +18,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/post")
+@RequiredArgsConstructor
 public class PostController {
-    @Autowired
     private PostService postService;
 
     @GetMapping("/{id}")

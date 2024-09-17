@@ -1,6 +1,7 @@
 package com.jpabooks.service;
 
 import com.jpabooks.entity.PostDTO;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -9,10 +10,14 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
+
 public class PostService {
-    private static String BASE_POST_URL ="https://jsonplaceholder.typicode.com/posts";
+
+   private final  RestTemplate restTemplate ;
+    private static final  String BASE_POST_URL ="https://jsonplaceholder.typicode.com/posts";
     public PostDTO getPostById(Long id)  {
-        RestTemplate restTemplate = new RestTemplate();
+      //  RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<PostDTO> post= restTemplate.getForEntity(BASE_POST_URL+"/"+id, PostDTO.class);
         return post.getBody();
     }

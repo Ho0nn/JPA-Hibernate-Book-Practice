@@ -7,15 +7,22 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import org.hibernate.validator.constraints.UniqueElements;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
+
 //@SQLDelete(sql="update authors a set is_deleted = true where id=?")
 //@Where(clause = "is_deleted=false")
 @Schema(name = "Authoe Entity")
 @Entity
-@Table(name = "authors")
+@Table(name = "authers")
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Auther extends BaseEntity<Long> {
     @NotBlank
     private String name;
@@ -24,14 +31,6 @@ public class Auther extends BaseEntity<Long> {
     private String ipAddress;
 
     private String imgPath;
-
-    public String getImgPath() {
-        return imgPath;
-    }
-
-    public void setImgPath(String imgPath) {
-        this.imgPath = imgPath;
-    }
 
     @Email(message = "{validation.constraints.email.message}")
     private String email;
@@ -42,58 +41,5 @@ public class Auther extends BaseEntity<Long> {
     @OneToMany(mappedBy = "auther", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> books = new ArrayList<>();
 
-    public Auther() {}
 
-    public Auther(String name) {
-        this.name = name;
-    }
-
-    public @Email String getEmail() {
-        return email;
-    }
-    public void setEmail(@Email String email) {
-        this.email = email;
-    }
-
-    public void addBook(Book book) {
-        books.add(book);
-        book.setAuther(this);
-    }
-
-    public void removeBook(Book book) {
-        books.remove(book);
-        book.setAuther(null);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getIpAddress() {
-        return ipAddress;
-    }
-
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
-
-//    public long getBookCnt() {
-//        return bookCnt;
-//    }
-//
-//    public void setBookCnt(long bookCnt) {
-//        this.bookCnt = bookCnt;
-//    }
-
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
 }

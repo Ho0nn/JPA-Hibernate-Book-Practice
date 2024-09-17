@@ -10,19 +10,16 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 @Validated
 @RestController
 @RequestMapping("/auther")
+@RequiredArgsConstructor
 public class AutherController {
     private final AutherService authService;
-
-    public AutherController(AutherService authService) {
-        this.authService = authService;
-    }
-
     @Operation(summary = "Find Author by ID")
     @ApiResponses(value={
             @ApiResponse(responseCode = "200",description = "Found Author",
@@ -32,13 +29,13 @@ public class AutherController {
                     content = @Content),
                             @ApiResponse(responseCode = "404",
                                     description = "Author not found",content=@Content)})
-    @GetMapping("/{id}")
+
+    @GetMapping("/id/{id}")
     public ResponseEntity<?> findById(@PathVariable @Min(value = 2) @Max(value = 200) Long id) {
         return ResponseEntity.ok(authService.findById(id));
     }
-
     @Operation(summary = "Find Author by Email")
-    @GetMapping("/{email}")
+    @GetMapping("/email/{email}")
     public ResponseEntity<?> findByEmail(@PathVariable String email){
         return ResponseEntity.ok(authService.findByEmail(email));
     }

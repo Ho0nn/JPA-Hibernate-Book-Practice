@@ -19,6 +19,7 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.jpabooks.entity.Auther;
 import com.jpabooks.errors.FileStorageException;
+import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +37,10 @@ import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.util.IOUtils;
 
 @Service
-
+@Log4j2
 public class FileUploadService {
 
     private Path fileStorageLocation;
-    Logger log = LoggerFactory.getLogger(AutherService.class);
 
     //	@Value("${file.upload.base-path}")
     private final String basePath = "C:\\uploadedFiles\\";

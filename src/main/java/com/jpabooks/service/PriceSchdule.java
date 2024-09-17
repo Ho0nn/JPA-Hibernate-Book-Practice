@@ -1,4 +1,5 @@
 package com.jpabooks.service;
+import lombok.extern.log4j.Log4j2;
 import net.javacrumbs.shedlock.spring.annotation.SchedulerLock;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
@@ -8,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 @Component
+@Log4j2
 public class PriceSchdule {
-    Logger log = LoggerFactory.getLogger(PriceSchdule.class);
      @Scheduled(initialDelay = 2000,fixedRate=2000)
     //@Scheduled(cron = "${interval-in-cron }")
     //@Scheduled(cron = "@daily")

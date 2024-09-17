@@ -6,51 +6,68 @@ import com.jpabooks.repository.AutherRepo;
 import com.jpabooks.base.BaseService;
 import com.jpabooks.entity.Auther;
 import com.jpabooks.repository.AutherSpec;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 @Service
-public class AutherService extends BaseService<Auther,Long> {
-    @Autowired
-    private AutherRepo autherRepo;
-    Logger log = LoggerFactory.getLogger(AutherService.class);
-    public AutherService(AutherRepo authRepo) {
-       super(authRepo);
-        this.autherRepo = authRepo;
-    }
+@RequiredArgsConstructor
+@Log4j2
+public class AutherService extends BaseService<Auther, Long> {
+
+    private final AutherRepo autherRepo;
+
     @Override
+    @Cacheable(value = "findAll", key = "#root.methodName")
+    public List<Auther> findAll() {
+        return super.findAll();
+    }
+
+    @Override
+    @Cacheable(value = "findById", key = "#id")
+    public Auther findById(Long id) {
+        return super.findById(id);
+    }
+
+    @Override
+    @CacheEvict(value = {"findAll", "findById"}, allEntries = true)
     public Auther insert(Auther entity) {
-        if (!entity.getEmail().isEmpty() && entity.getEmail()!=null){
-            CompletableFuture<Auther> auther = findByEmail(entity.getEmail());
-            //System.out.println("email is >> "+entity.getEmail());
-            log.info("auther name  {} and email is {}",entity.getName(),entity.getEmail());
-            if(auther.isDone()){
-//
-                throw new DuplicateRecordException("This Email already found!");
+        if (entity.getEmail() != null && !entity.getEmail().isEmpty()) {
+            CompletableFuture<Auther> autherFuture = findByEmail(entity.getEmail());
+            try {
+                Auther existingAuther = autherFuture.get();
+                if (existingAuther != null) {
+                    throw new DuplicateRecordException("This Email is already found!");
+                }
+            } catch (Exception e) {
+                throw new RuntimeException("Error checking email existence", e);
             }
         }
         return super.insert(entity);
     }
+
     @Override
+    @CacheEvict(value = {"findAll", "findById"}, allEntries = true)
     public Auther update(Auther entity) {
-        Auther auther=findById(entity.getId());
+        Auther auther = findById(entity.getId());
         auther.setName(entity.getName());
         return super.update(entity);
     }
+
     public List<Auther> findByAutherSpec(AutherSearch search) {
         AutherSpec autherSpec = new AutherSpec(search);
-            return autherRepo.findAll(autherSpec);
-    }
-    @Async
-    public CompletableFuture<Auther> findByEmail(String email){
-        return CompletableFuture.completedFuture(autherRepo.findByEmail(email).get());
+        return autherRepo.findAll(autherSpec);
     }
 
+    @Async
+    @Cacheable(value = "findByEmail", key = "#email")
+    public CompletableFuture<Auther> findByEmail(String email) {
+        return CompletableFuture.supplyAsync(() -> autherRepo.findByEmail(email).orElse(null));
+    }
 }

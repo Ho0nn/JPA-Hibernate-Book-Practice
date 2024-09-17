@@ -24,10 +24,13 @@ public class StartUpApp implements CommandLineRunner {
         if (autherService.findAll().isEmpty()) {
             Auther auther1 = new Auther();
             auther1.setName("Haneen");
+            auther1.setEmail("HAnona@gmail.com");
             Auther auther2 = new Auther();
             auther2.setName("Mohamed");
+            auther2.setEmail("Mohamed@gmail.com");
             Auther auther3 = new Auther();
             auther3.setName("Ahmed");
+            auther3.setEmail("Ahmed@gmail.com");
             autherService.insertAll(Arrays.asList(auther1, auther2, auther3));
         }
         if (bookService.findAll().isEmpty()&&bookService.findAll()==null) {

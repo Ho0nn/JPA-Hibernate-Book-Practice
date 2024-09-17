@@ -2,6 +2,8 @@ package com.jpabooks.base;
 
 import com.jpabooks.errors.RecordNotFoundException;
 import jakarta.persistence.MappedSuperclass;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -10,25 +12,27 @@ import java.util.List;
 import java.util.Optional;
 
 @MappedSuperclass
-public  class BaseService<T extends BaseEntity<ID>, ID extends Number> {
+//@AllArgsConstructor
+//@NoArgsConstructor(force = true)
+public abstract class BaseService<T extends BaseEntity<ID>, ID extends Number> {
 
+    @Autowired
+    private BaseRepo<T, ID> baseRepo;
 
-    private final BaseRepo<T, ID> baseRepo;
     @Autowired
     private MessageSource messageSource;
-    public BaseService(BaseRepo<T, ID> baseRepo) {
-        this.baseRepo = baseRepo;
-    }
 
     public T findById(ID id) {
         Optional<T> entity = baseRepo.findById(id);
-        if (entity.isPresent()) return entity.get();
-        else {
-            String [] msgparam={id.toString()};
-           String msg= messageSource.getMessage("validation.recordNotFound.message",msgparam, LocaleContextHolder.getLocale());
+        if (entity.isPresent()) {
+            return entity.get();
+        } else {
+            String[] msgparam = {id.toString()};
+            String msg = messageSource.getMessage("validation.recordNotFound.message", msgparam, LocaleContextHolder.getLocale());
             throw new RecordNotFoundException(msg);
         }
     }
+
     public T getById(ID id) {
         return baseRepo.getById(id);
     }
@@ -49,6 +53,9 @@ public  class BaseService<T extends BaseEntity<ID>, ID extends Number> {
     }
 
     public T update(T entity) {
+        if (entity.getId() == null) {
+            throw new IllegalArgumentException("ID should not be null when updating an existing entity.");
+        }
         return baseRepo.save(entity);
     }
 
