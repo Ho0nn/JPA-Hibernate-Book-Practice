@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class AutherSearch {
+public class AuthorSearch {
     private String authorName;
     private String authorEmail;
     private String ipAddress;

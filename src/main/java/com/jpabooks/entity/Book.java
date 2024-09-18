@@ -2,6 +2,7 @@ package com.jpabooks.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.jpabooks.base.BaseEntity;
+import com.jpabooks.dto.AuthorDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -12,7 +13,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@NamedEntityGraph(name = "loadAuther", attributeNodes = @NamedAttributeNode("auther"))
+import java.io.Serializable;
+
+@NamedEntityGraph(name = "loadAuthor", attributeNodes = @NamedAttributeNode("author"))
 @Entity
 @Table(name = "books")
 @Setter
@@ -20,8 +23,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Book extends BaseEntity<Long> {
-
+public class Book extends BaseEntity<Long> implements Serializable {
+   // private static final long serialVersionUID = 5270010967823899971L;
     @NotNull(message = "Enter book name")
     private String name;
 
@@ -32,8 +35,8 @@ public class Book extends BaseEntity<Long> {
     private double disc;
 
     @JsonBackReference
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "author_id")
-    private Auther auther;
+    private Author author;
 
 }

@@ -1,5 +1,6 @@
 package com.jpabooks.service;
 
+import com.jpabooks.dto.BookDTO;
 import com.jpabooks.repository.BookRepo;
 import com.jpabooks.base.BaseService;
 import com.jpabooks.entity.Book;
@@ -22,6 +23,9 @@ public class BookService extends BaseService<Book, Long> {
 
     @Override
     public List<Book> insertAll(List<Book> entities) {
+        BookDTO bookDTO = BookDTO.builder().name("Java Book")
+                .price(300)
+                .build();
         return bookRepo.saveAll(entities);
     }
 
@@ -30,11 +34,11 @@ public class BookService extends BaseService<Book, Long> {
         Book book = findById(entity.getId());
         book.setName(entity.getName());
         book.setPrice(entity.getPrice());
-        book.setAuther(entity.getAuther());
+        book.setAuthor(entity.getAuthor());
         return super.update(book);
     }
 
-    public int deleteByAuther(Long id) {
-        return bookRepo.deleteByAutherId(id);
+    public int deleteByAuthor(Long id) {
+        return bookRepo.deleteByAuthorId(id);
     }
 }

@@ -1,4 +1,4 @@
-package com.jpabooks.entity;
+package com.jpabooks.dto;
 
 
 import lombok.Getter;

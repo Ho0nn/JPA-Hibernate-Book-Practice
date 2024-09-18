@@ -17,13 +17,10 @@ import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import com.jpabooks.entity.Auther;
+import com.jpabooks.entity.Author;
 import com.jpabooks.errors.FileStorageException;
 import lombok.extern.log4j.Log4j2;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -61,7 +58,7 @@ public class FileUploadService {
 
     private  AmazonS3 amazonS3;
     @Autowired
-    private  AutherService autherService;
+    private AuthorService authorService;
 
     public String storeFile(File file, Long id, String pathType) {
 
@@ -101,9 +98,9 @@ public class FileUploadService {
 
         if (pathType.contains("authors")) {
             // update author image path
-            Auther auther = autherService.getById(id);
-            auther.setImgPath(imagePath);
-            autherService.update(auther);
+            Author author = authorService.getById(id);
+            author.setImgPath(imagePath);
+            authorService.update(author);
 
         }
 

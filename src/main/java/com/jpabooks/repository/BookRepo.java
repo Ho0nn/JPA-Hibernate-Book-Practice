@@ -16,32 +16,32 @@ import java.util.Optional;
 public interface BookRepo extends BaseRepo<Book, Long> {
 
     @Override
-    @EntityGraph(value = "loadAuther")
+    @EntityGraph(value = "loadAuthor")
     Optional<Book> findById(Long id);
 
     @Query("SELECT b FROM Book b WHERE (:name IS NULL OR b.name LIKE %:name%) " +
             "AND (:price IS NULL OR b.price >= :price) " +
-            "AND (:autherId IS NULL OR b.auther.id = :autherId)")
-    List<Book> filter(@Param("name") String name, @Param("price") Double price, @Param("autherId") Long autherId);
+            "AND (:autherId IS NULL OR b.author.id = :authorId)")
+    List<Book> filter(@Param("name") String name, @Param("price") Double price, @Param("authorId") Long authorId);
 //    @Query("select book from Book book where book.id = :id")
 //    Optional<Book> findByIdCustom(Long id);
 
-    //    @EntityGraph(attributePaths = {"auther"})
-//    @Query("select book from Book book join book.auther auther where " +
+    //    @EntityGraph(attributePaths = {"author"})
+//    @Query("select book from Book book join book.author author where " +
 //            "(:name is null or book.name like :name)" +
 //            "and(:price is null or book.price>= :price)" +
-//            "and(:autherId is null or auther.id= autherId)")
+//            "and(:authorId is null or author.id= authorId)")
     @Transactional
     @Modifying
-    @Query("DELETE FROM Book b WHERE b.auther.id = :id")
-    int deleteByAutherId(@Param("id") Long id);
+    @Query("DELETE FROM Book b WHERE b.author.id = :id")
+    int deleteByAuthorId(@Param("id") Long id);
 
     @Override
-    @EntityGraph(attributePaths = {"auther"})
+    @EntityGraph(attributePaths = {"author"})
     List<Book> findAll();
 
     @Transactional
     @Modifying
-    @Query("UPDATE Book b SET b.isDeleted = false WHERE b.auther.id = :autherId")
-    void restoreByAutherId(@Param("autherId") Long autherId);
+    @Query("UPDATE Book b SET b.isDeleted = false WHERE b.author.id = :authorId")
+    void restoreByAuthorId(@Param("authorId") Long authorId);
 }

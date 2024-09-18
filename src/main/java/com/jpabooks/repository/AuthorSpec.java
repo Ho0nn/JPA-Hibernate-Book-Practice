@@ -1,7 +1,7 @@
 package com.jpabooks.repository;
 
-import com.jpabooks.entity.Auther;
-import com.jpabooks.entity.AutherSearch;
+import com.jpabooks.entity.Author;
+import com.jpabooks.entity.AuthorSearch;
 import com.jpabooks.entity.Book;
 import jakarta.persistence.criteria.*;
 import org.springframework.data.jpa.domain.Specification;
@@ -9,18 +9,18 @@ import org.springframework.data.jpa.domain.Specification;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AutherSpec implements Specification<Auther> {
-    private AutherSearch search;
+public class AuthorSpec implements Specification<Author> {
+    private AuthorSearch search;
 
-    public AutherSpec(AutherSearch search) {
+    public AuthorSpec(AuthorSearch search) {
         super();
         this.search = search;
     }
     @Override
-    public Predicate toPredicate(Root<Auther> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+    public Predicate toPredicate(Root<Author> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
         List<Predicate> predicates = new ArrayList<>();
 
-       Join<Auther,Book>bookJoin= root.join("books", JoinType.LEFT);
+       Join<Author,Book>bookJoin= root.join("books", JoinType.LEFT);
 
         //name
         if (search.getAuthorName()!=null && !search.getAuthorName().isEmpty())

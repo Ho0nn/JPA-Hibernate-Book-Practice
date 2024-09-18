@@ -1,12 +1,10 @@
 package com.jpabooks.controller;
 
 import com.jpabooks.entity.Book;
-import com.jpabooks.entity.BookDTO;
+import com.jpabooks.dto.BookDTO;
 import com.jpabooks.service.BookService;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,8 +20,6 @@ public class BookController {
         BookDTO dto =new BookDTO();
         dto.setId(book.getId());
         dto.setName(book.getName());
-        dto.setPrice(book.getPrice());
-        dto.setAuther(book.getAuther());
         return ResponseEntity.ok(dto);
     }
 
@@ -37,7 +33,7 @@ public class BookController {
         Book book = new Book();
         book.setName(entity.getName());
         book.setPrice(entity.getPrice());
-        book.setAuther(entity.getAuther());
+       // book.setAuthor(entity.getAuthor());
 
         return ResponseEntity.ok(bookService.insert(book));
     }
@@ -54,6 +50,6 @@ public class BookController {
     }
     @DeleteMapping("/auther/{id}")
     public ResponseEntity<?> deleteByAuther(@PathVariable Long id){
-        return ResponseEntity.ok(bookService.deleteByAuther(id));
+        return ResponseEntity.ok(bookService.deleteByAuthor(id));
     }
 }

@@ -1,6 +1,6 @@
 package com.jpabooks.service;
 
-import com.jpabooks.entity.PostDTO;
+import com.jpabooks.dto.PostDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;

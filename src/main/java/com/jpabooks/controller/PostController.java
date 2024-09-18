@@ -1,20 +1,10 @@
 package com.jpabooks.controller;
 
-import com.jpabooks.entity.Auther;
-import com.jpabooks.entity.PostDTO;
+import com.jpabooks.dto.PostDTO;
 import com.jpabooks.service.PostService;
-import io.swagger.v3.oas.annotations.Operation;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
-
-import javax.swing.text.html.parser.Entity;
-import java.util.List;
 
 @RestController
 @RequestMapping("/post")
