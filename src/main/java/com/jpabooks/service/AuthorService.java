@@ -14,6 +14,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -40,13 +41,9 @@ public class AuthorService extends BaseService<Author, Long> {
     @CacheEvict(value = {"findAll", "findById"}, allEntries = true)
     public Author insert(Author entity) {
         if (entity.getEmail() != null && !entity.getEmail().isEmpty()) {
-            try {
-                Author existingAuthor = findByEmail(entity.getEmail()).get();
-                if (existingAuthor != null) {
-                    throw new DuplicateRecordException("This Email is already found!");
-                }
-            } catch (InterruptedException | ExecutionException e) {
-                throw new RuntimeException("Error checking email existence", e);
+            Optional<Author> existingAuthor = findByEmail(entity.getEmail());
+            if (existingAuthor.isPresent()) {
+                throw new DuplicateRecordException("This Email is already found!");
             }
         }
         return super.insert(entity);
@@ -65,10 +62,10 @@ public class AuthorService extends BaseService<Author, Long> {
         return authorRepo.findAll(authorSpec);
     }
 
-    @Async
-    @Cacheable(value = "findByEmail", key = "#email")
-    public CompletableFuture<Author> findByEmail(String email) {
+    //    @Async
+    //    @Cacheable(value = "findByEmail", key = "#email")
+    public Optional<Author> findByEmail(String email) {
         log.debug("Finding author by email: {}", email);
-        return CompletableFuture.supplyAsync(() -> authorRepo.findByEmail(email).orElse(null));
+        return authorRepo.findByEmail(email);
     }
 }
